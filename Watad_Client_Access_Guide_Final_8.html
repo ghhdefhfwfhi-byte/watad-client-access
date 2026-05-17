@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل إضافة الوصول الإداري - Watad Agency</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1E90DD 0%, #141E3C 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1E90DD 0%, #0D5BA5 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 4px solid #FFB800;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 5px;
+        }
+
+        .header small {
+            display: block;
+            font-size: 14px;
+            opacity: 0.85;
+            margin-top: 10px;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            padding: 0 30px;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+
+        .nav-tabs button {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            min-width: 180px;
+        }
+
+        .nav-tabs button:hover {
+            color: #1E90DD;
+        }
+
+        .nav-tabs button.active {
+            color: #1E90DD;
+            border-bottom-color: #1E90DD;
+            background: #f0f7ff;
+        }
+
+        /* Content Sections */
+        .content {
+            padding: 40px 30px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Step Cards */
+        .step-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-right: 4px solid #1E90DD;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            box-shadow: 0 5px 20px rgba(30, 144, 221, 0.1);
+            transform: translateX(-5px);
+        }
+
+        .step-card h3 {
+            color: #1E90DD;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+        }
+
+        .step-icon {
+            font-size: 24px;
+            width: 35px;
+            height: 35px;
+            background: #E6F1FB;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .steps-list {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .step-item:last-child {
+            border-bottom: none;
+        }
+
+        .step-number {
+            background: #1E90DD;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 14px;
+        }
+
+        .step-text {
+            color: #333;
+            flex: 1;
+            padding-top: 2px;
+            font-size: 14px;
+        }
+
+        /* Video Container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #f0f0f0;
+            margin-top: 15px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .video-label {
+            color: #666;
+            font-size: 13px;
+            margin-top: 10px;
+            padding: 10px;
+            background: #fff9e6;
+            border-radius: 6px;
+            border-right: 3px solid #FFB800;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #E6F1FB;
+            border-right: 4px solid #1E90DD;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #0D5BA5;
+        }
+
+        /* Video Link Button */
+        .video-link-btn {
+            display: inline-block;
+            background: #1E90DD;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .video-link-btn:hover {
+            background: #0D5BA5;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 144, 221, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 2px solid #e9ecef;
+            color: #666;
+        }
+
+        .footer h4 {
+            color: #1E90DD;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .footer-contact {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e9ecef;
+            color: #1E90DD;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .nav-tabs {
+                padding: 0 15px;
+            }
+
+            .nav-tabs button {
+                font-size: 14px;
+                min-width: auto;
+                flex: 1;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .step-card {
+                padding: 15px;
+            }
+
+            .step-card h3 {
+                font-size: 16px;
+            }
+        }
+
+        /* Success Message */
+        .success-box {
+            background: #E8F5E9;
+            border-right: 4px solid #4CAF50;
+            padding: 15px;
+            border-radius: 6px;
+            color: #2E7D32;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .verification-box {
+            background: #FFF3E0;
+            border-right: 4px solid #FF9800;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .verification-box h4 {
+            color: #E65100;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .verification-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #E65100;
+        }
+
+        .verification-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .checkmark {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .video-placeholder {
+            background: linear-gradient(135deg, #1E90DD 0%, #E6F1FB 100%);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 15px;
+            color: #0D5BA5;
+        }
+
+        .video-placeholder h4 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .video-placeholder p {
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>دليل إضافة الوصول الإداري</h1>
+            <p>Meta Ads Manager و Instagram Business</p>
+            <small>من Watad Agency | دليل شامل خطوة بخطوة</small>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="active" onclick="switchTab('meta')">📊 Meta Ads Manager</button>
+            <button onclick="switchTab('instagram')">📷 Instagram Business</button>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Meta Ads Manager Tab -->
+            <div id="meta" class="tab-content active">
+                <div class="success-box">
+                    ✓ هذا الدليل يغطي كيفية إعطاء فريق Watad وصول Admin و Editor لحساب Meta الإعلاني
+                </div>
+
+                <!-- Step 1: Admin Access -->
+                <div class="step-card">
+                    <h3>
+                        <span class="step-icon">🔐</span>
+                        1. إضافة Admin Access
+                    </h3>
+                    <p class="step-subtitle">إعطاء وصول إداري كامل لحساب Meta Business</p>
+                    
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <span class="step-number">1</span>
+                            <span class="step-text">اذهب إلى <strong>Meta Business Suite</strong> (business.facebook.com)</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">2</span>
+                            <span class="step-text">انقر على الترس <strong>Settings</strong> في الأسفل يساراً</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">3</span>
+                            <span class="step-text">اختر <strong>People</strong> من القائمة اليسرى</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">4</span>
+                            <span class="step-text">انقر على <strong>Invite People</strong></span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">5</span>
+                            <span class="step-text">أدخل: <strong>performance@watad.agency</strong></span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">6</span>
+                            <span class="step-text">اختر <strong>Admin Access</strong> من الخيارات</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">7</span>
+                            <span class="step-text">حدد جميع الأصول المطلوبة (Pages, Ad Accounts, etc.)</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">8</span>
+                            <span class="step-text">انقر على <strong>Send Invitation</strong></span>
+                        </div>
+                    </div>
+
+
+                    <div style="background: linear-gradient(135deg, #1E90DD 0%, #0D5BA5 100%); padding: 40px; border-radius: 8px; text-align: center; margin-top: 15px; box-shadow: 0 5px 20px rgba(30, 144, 221, 0.2);">
+                        <h4 style="color: white; margin-bottom: 15px; font-size: 18px;">📺 How To Add Admin in Meta Business Suite 2026</h4>
+                        <a href="https://www.youtube.com/watch?v=FFoFgeNIPoU" target="_blank" style="display: inline-block; background: #FFB800; color: #0D5BA5; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s ease; border: none; cursor: pointer;">
+                            🎬 شاهد الفيديو على YouTube
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Step 2: Editor Access -->
+                <div class="step-card">
+                    <h3>
+                        <span class="step-icon">✏️</span>
+                        2. إضافة Editor Access
+                    </h3>
+                    <p class="step-subtitle">إعطاء وصول محرر للقيام بتعديل الحملات الإعلانية</p>
+                    
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <span class="step-number">1</span>
+                            <span class="step-text">اذهب إلى <strong>Meta Ads Manager</strong> (adsmanager.facebook.com)</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">2</span>
+                            <span class="step-text">انقر على <strong>Settings</strong> (الترس في الأعلى يساراً)</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">3</span>
+                            <span class="step-text">اختر <strong>Users</strong> من القائمة اليسرى</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">4</span>
+                            <span class="step-text">انقر على <strong>Add User</strong></span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">5</span>
+                            <span class="step-text">أدخل: <strong>performance@watad.agency</strong></span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">6</span>
+                            <span class="step-text">اختر <strong>Editor</strong> كدور (حد أدنى)</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">7</span>
+                            <span class="step-text">حدد حسابات الإعلانات المطلوبة</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">8</span>
+                            <span class="step-text">انقر على <strong>Add User</strong> لتأكيد</span>
+                        </div>
+                    </div>
+
+
+                    <div style="background: linear-gradient(135deg, #1E90DD 0%, #0D5BA5 100%); padding: 40px; border-radius: 8px; text-align: center; margin-top: 15px; box-shadow: 0 5px 20px rgba(30, 144, 221, 0.2);">
+                        <h4 style="color: white; margin-bottom: 15px; font-size: 18px;">📺 How to Give Access to Meta Ads Manager</h4>
+                        <a href="https://www.youtube.com/watch?v=dMJIxKgWxJ8" target="_blank" style="display: inline-block; background: #FFB800; color: #0D5BA5; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s ease; border: none; cursor: pointer;">
+                            🎬 شاهد الفيديو على YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instagram Business Tab -->
+            <div id="instagram" class="tab-content">
+                <div class="success-box">
+                    ✓ هذا الدليل يغطي كيفية إعطاء فريق Watad وصول Admin و Editor لحساب Instagram
+                </div>
+
+                <!-- Step 1: Instagram Admin -->
+                <div class="step-card">
+                    <h3>
+                        <span class="step-icon">🔐</span>
+                        1. إضافة Admin Access
+                    </h3>
+                    <p class="step-subtitle">إعطاء وصول إداري لحساب Instagram Business</p>
+                    
+                    <div class="info-box" style="background: #E6F1FB; border-right: 4px solid #1E90DD; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
+                        📧 <strong>استخدم البريد الإلكتروني:</strong> social@watad.agency
+                    </div>
+                    
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <span class="step-number">1</span>
+                            <span class="step-text">اذهب إلى <strong>Meta Business Suite</strong> (business.facebook.com)</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">2</span>
+                            <span class="step-text">انقر على <strong>Settings</strong></span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">3</span>
+                            <span class="step-text">اختر <strong>People</strong> من القائمة</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">4</span>
+                            <span class="step-text">انقر على <strong>Invite People</strong></span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">5</span>
+                            <span class="step-text">أدخل: <strong>social@watad.agency</strong></span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">7</span>
+                            <span class="step-text">حدد حساب Instagram المطلوب</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">8</span>
+                            <span class="step-text">انقر على <strong>Send Invitation</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        📹 شاهد الفيديو التوضيحي للعملية الكاملة
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, #1E90DD 0%, #0D5BA5 100%); padding: 40px; border-radius: 8px; text-align: center; margin-top: 15px; box-shadow: 0 5px 20px rgba(30, 144, 221, 0.2);">
+                        <h4 style="color: white; margin-bottom: 15px; font-size: 18px;">📺 How To Add Admins To Instagram Account In 2026</h4>
+                        <a href="https://www.youtube.com/watch?v=5pAbBYK5F98" target="_blank" style="display: inline-block; background: #FFB800; color: #0D5BA5; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s ease; border: none; cursor: pointer;">
+                            🎬 شاهد الفيديو على YouTube
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Step 2: Instagram Editor -->
+                <div class="step-card">
+                    <h3>
+                        <span class="step-icon">✏️</span>
+                        2. إضافة Editor Access
+                    </h3>
+                    <p class="step-subtitle">إعطاء وصول محرر لإدارة محتوى Instagram</p>
+                    
+                    <div class="info-box" style="background: #E6F1FB; border-right: 4px solid #1E90DD; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
+                        📧 <strong>استخدم البريد الإلكتروني:</strong> social@watad.agency
+                    </div>
+                    
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <span class="step-number">1</span>
+                            <span class="step-text">اذهب إلى <strong>Instagram Settings</strong></span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">2</span>
+                            <span class="step-text">اختر <strong>Roles</strong></span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">3</span>
+                            <span class="step-text">انقر على <strong>Add Person</strong></span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">4</span>
+                            <span class="step-text">أدخل: <strong>social@watad.agency</strong></span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">5</span>
+                            <span class="step-text">اختر <strong>Editor</strong> كدور</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">6</span>
+                            <span class="step-text">حدد الأذونات المطلوبة</span>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-number">7</span>
+                            <span class="step-text">انقر على <strong>Send Invitation</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        📹 شاهد الفيديو للتعليمات المفصلة
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, #1E90DD 0%, #0D5BA5 100%); padding: 40px; border-radius: 8px; text-align: center; margin-top: 15px; box-shadow: 0 5px 20px rgba(30, 144, 221, 0.2);">
+                        <h4 style="color: white; margin-bottom: 15px; font-size: 18px;">📺 How To Add Admin To An Instagram Account (2026)</h4>
+                        <a href="https://www.youtube.com/watch?v=4GGvjhYBZnw" target="_blank" style="display: inline-block; background: #FFB800; color: #0D5BA5; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s ease; border: none; cursor: pointer;">
+                            🎬 شاهد الفيديو على YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h4>شكراً لثقتك بـ Watad Agency</h4>
+            <p>نحن هنا لمساعدتك في إدارة حملاتك الإعلانية بكفاءة</p>
+            <p>آخر تحديث: مايو 2026</p>
+            <div class="footer-contact">
+                performance@watad.agency (Meta Ads Manager) | social@watad.agency (Instagram Business) | Watad Agency
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabName) {
+            // Hide all content
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Remove active class from buttons
+            const buttons = document.querySelectorAll('.nav-tabs button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Show selected content
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
